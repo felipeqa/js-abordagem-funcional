@@ -40,3 +40,5 @@ export const pipe = (...fns) => value => fns.reduce((previousValue, fn) => fn(pr
 
 
 */
+
+export const takeUtil = (times, fn) => () => times-- > 0 && fn();
