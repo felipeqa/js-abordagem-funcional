@@ -25,7 +25,7 @@ export const notasService = {
        
         return this.listAll()
              .then(sumItems)   // versao encadeada .then(notas => sumItemsValue(filterItems(getItemsFromNotas(notas))));
-             .catch(err => {
+             .catch(err => {    // versão com o parametro .then(notas => sumItems(notas))
                 console.log(err);
                 return Promise.reject('Houve um erro inexperado')
              });               
