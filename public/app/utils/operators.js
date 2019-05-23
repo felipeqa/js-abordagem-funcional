@@ -17,6 +17,8 @@ export const compose = (...fns) =>  value => {
     }, value);
 }
 
+export const pipe = (...fns) => value => fns.reduce((previousValue, fn) => fn(previousValue), value);
+
 // const sumItems = compose(sumItems, filterItems, getItemsFromNotas);
 // sumItems(notas);
 
