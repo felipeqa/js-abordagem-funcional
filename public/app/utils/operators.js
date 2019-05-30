@@ -42,3 +42,15 @@ export const pipe = (...fns) => value => fns.reduce((previousValue, fn) => fn(pr
 */
 
 export const takeUtil = (times, fn) => () => times-- > 0 && fn();
+
+export const debounceTime = (milliseconds, fn) => {
+    let timer = 0;
+
+    return () => {
+
+        clearTimeout(timer);
+        timer = setTimeout(fn, milliseconds);
+        
+    }
+
+};
